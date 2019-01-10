@@ -15,10 +15,13 @@ month = 0
 
 out = open('schedule.txt', 'w')   # Open a file for writing
 
-print('{:>5s} {:>10s} {:>10s} {:>10s}'.format('Month', 'Interest', 'Principal', 'Remaining'), file=out)
+
+print("Result:")
+print('{:>5s} {:>10s} {:>10s} {:>10s}'.format('Month', 'Interest', 'Principal', 'Remaining'), file = out)
+
 while principal > 0:
     month += 1
-    if month >= extra_payment_start_month and month <= extra_payment_end_month:
+    if extra_payment_start_month <= month <= extra_payment_end_month:
         total_payment = payment + extra_payment
     else:
         total_payment = payment

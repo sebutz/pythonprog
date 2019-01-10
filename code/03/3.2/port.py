@@ -5,7 +5,7 @@
 total = 0.0
 
 with open('../../Data/portfolio.csv', 'r') as f:
-    headers = next(f)          # Skip the header parts
+    headers = next(f)          # Skip the header parts (skip first line)
     for line in f:
         line = line.strip()    # Strip whitespace
         parts = line.split(',')
@@ -14,6 +14,7 @@ with open('../../Data/portfolio.csv', 'r') as f:
         parts[2] = int(parts[2])
         parts[3] = float(parts[3])
         total += parts[2] * parts[3]
+        print(parts)
 
 print('Total cost:', total)
 
